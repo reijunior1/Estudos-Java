@@ -1,0 +1,28 @@
+//Gerente é um FuncionarioAutenticavel
+
+//(extends ) = Gerente herda da Class Funcionario
+
+public class Gerente extends Funcionario implements Autenticavel {
+
+	private int senha = 3333;
+
+	public double getBonificacao() { // O Metodo GetBonificacao está definido na Class Funcionario ( Class Mãe )
+		return super.getSalario(); // pegando o metodo getBonificacao e atributo getSalario na
+									// Class Mãe
+	}
+
+	@Override
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+
+	@Override
+	public boolean autentica(int senha) {
+		if (this.senha == senha) {
+			return true;
+		} else {
+			return false;
+		}
+
+	}
+}

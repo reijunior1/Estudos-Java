@@ -1,0 +1,42 @@
+//(extends ) = Gerente herda da Class Funcionario
+
+public class Gerente extends Funcionario {
+	
+	
+	//Criando autenticação de senha para Gerente
+	
+	private String login;
+	private int senha;
+	
+	
+	
+	//criando Sette para senha 
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+	
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	
+	//criando metodo para autenticação 
+	public boolean autentica(String login, int senha) {
+		if(this.login == login) {
+			System.out.println("Bem Vindo Reinaldo, login aceito");
+		} else {
+			System.out.println("Login invalido");
+		} 
+		
+		if(this.senha == senha) {
+			System.out.println("Bem vindo Reinaldo Vicente, senha correta");
+			return true;
+		} else {
+			System.out.println("Falha na autenticação");	
+			return false;
+		}
+	}
+
+	public double getBonificacao() {  // O Metodo GetBonificacao está definido na Class Funcionario ( Class Mãe )
+		return super.getBonificacao() + super.getSalario(); // pegando o metodo getBonificacao e atributo getSalario na Class Mãe 
+	}
+}

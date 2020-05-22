@@ -1,0 +1,9 @@
+//(extends ) = CoordenadoraRh herda da Class Funcionario
+
+public class CoordenadoraRh extends Funcionario {
+
+	public double getBonificacao() { // O Metodo GetBonificacao está definido na Class Funcionario ( Class Mãe )
+		return super.getBonificacao() + super.getSalario(); // pegando o metodo getBonificacao e atributo getSalario na
+															// Class Mãe
+	}
+}

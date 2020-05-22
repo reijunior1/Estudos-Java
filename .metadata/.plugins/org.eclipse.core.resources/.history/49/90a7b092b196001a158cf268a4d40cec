@@ -1,0 +1,12 @@
+//Gerente é um FuncionarioAutenticavel
+
+//(extends ) = Gerente herda da Class Funcionario
+
+public class Gerente extends FuncionarioAutenticavel {
+
+
+	public double getBonificacao() { // O Metodo GetBonificacao está definido na Class Funcionario ( Class Mãe )
+		return super.getSalario(); // pegando o metodo getBonificacao e atributo getSalario na
+															// Class Mãe
+	}
+}

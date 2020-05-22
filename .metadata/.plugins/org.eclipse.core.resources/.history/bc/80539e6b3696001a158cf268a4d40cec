@@ -1,0 +1,8 @@
+
+public class Estudante extends Funcionario {
+	
+	public double getBonificacao() { // O Metodo GetBonificacao está definido na Class Funcionario ( Class Mãe )
+		System.out.println("Chamando metodo bonificação Estudante");
+		return 100;
+
+}

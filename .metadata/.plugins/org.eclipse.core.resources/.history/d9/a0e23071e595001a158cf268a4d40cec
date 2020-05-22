@@ -1,0 +1,11 @@
+
+public class TesteReferencia {
+
+	public static void main(String[] args) {
+		
+		Funcionario g1 = new Gerente(); // Utilizando o Polimorfismo 
+		g1.setNome("Reinaldo");
+		System.out.println(g1.getNome());
+	}
+
+}

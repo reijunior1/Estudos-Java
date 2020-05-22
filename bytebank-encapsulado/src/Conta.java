@@ -1,0 +1,79 @@
+public class Conta {
+
+	private double saldo; // atributo saldo
+	private int agencia; // atributo agencia
+	private int numero; // atributo numero
+	private Cliente titular; // atributo titular
+	private static int total; //informando a quantidades de contas já criadas, usando o static para a Class Conta inteira.
+	
+	public Conta(int agencia, int numero) { //para criar uma conta obrigatorio ter numero de agencia e conta.
+		Conta.total++;
+		this.agencia = agencia;
+		this.numero = numero;
+	
+		
+	}
+
+	// criando metodos (define o comportamento ou maneira de fazer algo)
+	public void deposita(double valor) {
+		if(valor <= 0) {
+			System.out.println("Operação invalida, não é possivel deposito com valor NEGATIVO ou valor ZERADO");
+			return;
+		}
+		this.saldo += valor; // this refere-se a esta conta, utiliza-se em atributos.
+	}
+
+	// retornando metodos
+	public boolean saca(double valor) {
+		if (this.saldo >= valor) {
+			this.saldo -= valor;
+			System.out.println("saque completado no valor de R$ " + valor);
+			return true;
+		} else {
+			System.out.println("Saldo Indisponivel");
+			return false;
+		}
+	}
+
+	public boolean transfere(double valor, Conta destino) {
+		if (this.saldo >= valor) {
+			this.saldo -= valor;
+			destino.deposita(valor);
+			return true;
+		}
+		return false;
+	}
+
+	public double getSaldo() {
+		return this.saldo;
+	}
+	
+	public int getNumero() {
+		return this.numero;
+	}
+	
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public int getAgencia() {
+		return this.agencia;
+	}
+	
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
+	
+	public Cliente getTitular() {
+		return titular;
+	}
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+}
+
+	public static int getTotal() {
+		return Conta.total;
+	}
+	
+}

@@ -1,0 +1,32 @@
+
+
+// Aplicando o Polimorfismo 
+
+public class TesteReferencia {
+
+	public static void main(String[] args) {
+		
+		Funcionario g1 = new Gerente(); 
+		g1.setNome("Reinaldo");
+		g1.setSalario(0);
+		
+		
+		Funcionario f = new Funcionario();
+		f.setSalario(0);	
+		
+		Funcionario c = new CoordenadoraRh();
+		c.setSalario(3000);	
+		
+		
+		
+		ControleBonificacao controle = new ControleBonificacao();
+		controle.registra(g1);
+		controle.registra(f);
+		controle.registra(c);
+		
+		System.out.println(controle.getSoma());		
+		
+	
+	}
+
+}
